@@ -16,8 +16,8 @@
         public ConservationStatus ConservationStatus { get; init; }
         public AnimalOrder AnimalOrder { get; init; }
 
-        public string ConservationStatusInfo => $"Conservation status: {ConservationStatus}";
-        public string AnimalOrderInfo => $"Animal order: {AnimalOrder}";
+        public string ConservationStatusInfo => $"ConservationStatus: {ConservationStatus}";
+        public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
         protected string PlumageInfo => $"Plumage: {_plumage}";
 
         public override void PrintInfo(IPrinter printer)

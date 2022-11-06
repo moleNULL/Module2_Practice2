@@ -4,26 +4,94 @@
     {
         public static void Run()
         {
-            // Output to Console for SafariPark class
-            ConsolePrinter consolePrinter = new ConsolePrinter();
+            Console.WriteLine("\t\t\t\t\t\t\tSafari park:\n");
 
-            Animal[] animals = PopulatePark();
+            SafariPark safariPark = new SafariPark();
+            safariPark.PopulateByDefault();
+            safariPark.Printer = new ConsolePrinter(); // Output to Console for SafariPark class
+            safariPark.PrintAnimals();
 
-            SafariPark safariPark = new SafariPark(animals);
-            safariPark.PrintAnimals(consolePrinter);
+            SortByUserChoice(safariPark);
+            safariPark.PrintAnimals();
+
+            PrintUserFindChoice(safariPark);
+
+            // fix lessPopulous
+            // пронумеровать элементы при выводе
+            // сделать возможность добавления += Animal[]
+            // написать комментарии
+            // проверить все файлы проекта
+
+            /*var snake = new Snake(name: "Common European Viper", populationNumber: 23, lifespan: 10, isPoisonous: true, continents: new string[] { "Europe" });
+            var bird = new Bird(name: "American Flamingo", canFly: true, populationNumber: 16, lifespan: 49, continents: new string[] { "South America" });
+
+            safariPark.Animals = new Animal[] { snake, bird };
+
+            // safariPark.Printer = new FilePrinter("animals.txt");
+            safariPark.PrintFirstAnimal();
+            safariPark.PrintLastAnimal();*/
         }
 
-        // Create initial animals
-        private static Animal[] PopulatePark()
+        // Ask user how to sort animals in the enclosure of the safari park
+        private static void SortByUserChoice(SafariPark safariPark)
         {
-            var ostrich = new SomaliOstrich(populationNumber: 102);
-            var africanMarabou = new AfricanMarabou(populationNumber: 625);
-            var sumatranOrangutan = new SumatranOrangutan(populationNumber: 2);
-            var lion = new Lion(populationNumber: 35);
+            while (true)
+            {
+                Console.Write("\nSort animals by:\n 1. Lifespan\n " +
+                    "2. Population number\nChoice: ");
+                string? sortAnswer = Console.ReadLine();
 
-            var animals = new Animal[] { ostrich, africanMarabou, sumatranOrangutan, lion };
+                switch (sortAnswer)
+                {
+                    case "1":
+                        safariPark.SortByLifespan();
+                        Console.WriteLine("\n\t\t\tSorted by [Lifespan] in ascending order:");
+                        break;
+                    case "2":
+                        safariPark.SortByPopulationNumber();
+                        Console.WriteLine("\n\t\t\tSorted by [PopulationNumber] in ascending order:");
+                        break;
+                    default:
+                        Console.WriteLine("Error! Only 1 or 2 is a valid answer");
+                        continue;
+                }
 
-            return animals;
+                break;
+            }
+        }
+
+        // Ask user what animals to find in the enclosure of the safari park
+        private static void PrintUserFindChoice(SafariPark safariPark)
+        {
+            while (true)
+            {
+                Console.Write("\nFind animals by:" +
+                    $"\n 1. Long life" +
+                    "\n 2. Less populous\n 3. Only from Africa\n 4. Not from Africa" +
+                    "\nChoice: ");
+                string? findAnswer = Console.ReadLine();
+
+                switch (findAnswer)
+                {
+                    case "1":
+                        safariPark.PrintMaxLifespanAnimals();
+                        break;
+                    case "2":
+                        safariPark.PrintLessPopulousAnimals();
+                        break;
+                    case "3":
+                        safariPark.PrintAnimalsFromContinent(fromAfrica: true);
+                        break;
+                    case "4":
+                        safariPark.PrintAnimalsFromContinent(fromAfrica: false);
+                        break;
+                    default:
+                        Console.WriteLine("Error! Only 1, 2, 3, or 4 is a valid answer");
+                        continue;
+                }
+
+                break;
+            }
         }
     }
 }

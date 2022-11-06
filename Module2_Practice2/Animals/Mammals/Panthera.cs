@@ -3,8 +3,8 @@
     public class Panthera : Mammal
     {
         private readonly bool _canRoar;
-        public Panthera(string name, int populationNumber, int lifespan)
-            : base(name, hasFur: true, populationNumber, lifespan, continents: new string[] { "Africa" })
+        public Panthera(string name, int populationNumber, int lifespan, Continent[] continents)
+            : base(name, hasFur: true, populationNumber, lifespan, continents)
         {
             _canRoar = true;
         }

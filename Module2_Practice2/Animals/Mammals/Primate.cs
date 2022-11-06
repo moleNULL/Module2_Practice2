@@ -2,8 +2,8 @@
 {
     public class Primate : Mammal
     {
-        public Primate(string name, int populationNumber, int lifespan)
-            : base(name, hasFur: true, populationNumber, lifespan, continents: new string[] { "South America", "Asia", "Africa" })
+        public Primate(string name, int populationNumber, int lifespan, Continent[] continents)
+            : base(name, hasFur: true, populationNumber, lifespan, continents)
         {
         }
 

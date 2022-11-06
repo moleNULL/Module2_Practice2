@@ -1,11 +1,11 @@
-﻿namespace Module2_Practice2.Animals.Mammals
+﻿namespace Module2_Practice2.Animals.Reptiles
 {
-    public class Lion : Panthera, IAnimalExtendedInfo
+    public class CoastalTaipan : Snake, IAnimalExtendedInfo
     {
-        public Lion(int populationNumber)
-            : base(name: "Lion", populationNumber, lifespan: 15, continents: new Continent[] { Continent.Africa })
+        public CoastalTaipan(int populationNumber)
+            : base(name: "Coastal Taipan", populationNumber, lifespan: 13, isPoisonous: true, continents: new Continent[] { Continent.Australia, Continent.Asia })
         {
-            ConservationStatus = ConservationStatus.InSafe;
+            ConservationStatus = ConservationStatus.NearThreatened;
             AnimalOrder = AnimalOrder.Carnivore;
         }
 
@@ -15,12 +15,10 @@
         public string ConservationStatusInfo => $"ConservationStatus: {ConservationStatus}";
         public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
 
-        protected override string PopulationInfo => $"Population: {PopulationNumber} lions";
-
         public override void PrintInfo(IPrinter printer)
         {
             string separtor = " | ";
-            var infoStrings = new string[] { NameInfo, CanRoarInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo, ContinentsInfo };
+            var infoStrings = new string[] { NameInfo, IsPoisonousInfo, CanSwimInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 

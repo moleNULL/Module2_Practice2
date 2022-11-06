@@ -11,14 +11,13 @@
             _country = "Indonesia";
 
             Lifespan = 42; // change the Property that Orangutan class is responsible for
-            Continents = new string[] { "Asia" }; // change the Property that Primate class is responsible for
         }
 
         public ConservationStatus ConservationStatus { get; init; }
         public AnimalOrder AnimalOrder { get; init; }
 
-        public string ConservationStatusInfo => $"Conservation status: {ConservationStatus}";
-        public string AnimalOrderInfo => $"Animal order: {AnimalOrder}";
+        public string ConservationStatusInfo => $"ConservationStatus: {ConservationStatus}";
+        public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
         protected string CountryInfo => $"Country: {_country}";
 
         public override void PrintInfo(IPrinter printer)

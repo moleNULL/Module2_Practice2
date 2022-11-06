@@ -1,4 +1,4 @@
-﻿namespace Module2_Practice2
+﻿namespace Module2_Practice2.Printers
 {
     public class ConsolePrinter : IPrinter
     {

@@ -3,10 +3,10 @@
     public abstract class Animal
     {
         // protected Properties is used to allow user to modify values ONLY through contructor
-        protected abstract string Name { get; set; }
-        protected abstract int PopulationNumber { get; set; }
-        protected abstract int Lifespan { get; set; }
-        protected abstract string[] Continents { get; set; }
+        public abstract string Name { get; set; }
+        public abstract int PopulationNumber { get; set; }
+        public abstract int Lifespan { get; set; }
+        public abstract Continent[] Continents { get; set; }
 
         // protected Properties to be used in PrintInfo() to reduce usage of
         // the same code in override methods | most common Properties are implemented
@@ -17,8 +17,8 @@
         {
             get
             {
-                return (Continents.Length == 1 ? "Continent of origin: " : "Continents of origin: ")
-                        + string.Join(", ", Continents);
+                return (Continents.Length == 1 ? "Continent" : "Continents") + " of habitation: "
+                + string.Join(", ", Continents);
             }
         }
 

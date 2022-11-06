@@ -15,4 +15,21 @@
         Carnivore,
         Omnivore
     }
+
+    public enum WaterType
+    {
+        FreshWater,
+        SaltWater
+    }
+
+    public enum Continent
+    {
+        Europe,
+        Asia,
+        NorthAmerica,
+        SouthAmerica,
+        Africa,
+        Australia,
+        Antractica
+    }
 }

@@ -2,7 +2,7 @@
 {
     public class Mammal : Animal
     {
-        public Mammal(string name, bool hasFur, int populationNumber, int lifespan, string[] continents)
+        public Mammal(string name, bool hasFur, int populationNumber, int lifespan, Continent[] continents)
         {
             Name = name;
             HasFur = hasFur;
@@ -11,11 +11,11 @@
             Continents = continents;
         }
 
-        protected override string Name { get; set; }
-        protected bool HasFur { get; set; }
-        protected override int PopulationNumber { get; set; }
-        protected override int Lifespan { get; set; }
-        protected override string[] Continents { get; set; }
+        public override string Name { get; set; }
+        public bool HasFur { get; set; }
+        public override int PopulationNumber { get; set; }
+        public override int Lifespan { get; set; }
+        public override Continent[] Continents { get; set; }
 
         protected override string NameInfo => $"Mammal: {Name}";
         protected string HasFurInfo => $"HasFur: {HasFur}";

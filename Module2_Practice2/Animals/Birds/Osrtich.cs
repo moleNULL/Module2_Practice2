@@ -3,7 +3,7 @@
     public class Osrtich : Bird
     {
         public Osrtich(string name, int populationNumber, int lifeSpan)
-            : base(name, canFly: false, populationNumber, lifeSpan, continents: new string[] { "Africa" })
+            : base(name, canFly: false, populationNumber, lifeSpan, continents: new Continent[] { Continent.Africa })
         {
         }
     }

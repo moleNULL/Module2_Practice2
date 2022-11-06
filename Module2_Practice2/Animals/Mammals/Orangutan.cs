@@ -4,7 +4,7 @@
     {
         private readonly string _furColor;
         public Orangutan(string name, int populationNumber)
-            : base(name, populationNumber, lifespan: 38)
+            : base(name, populationNumber, lifespan: 38, continents: new Continent[] { Continent.Asia })
         {
             _furColor = "red";
         }

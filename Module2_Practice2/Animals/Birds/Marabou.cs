@@ -3,7 +3,7 @@
     public class Marabou : Bird
     {
         public Marabou(string name, int populationNumber, int lifespan)
-            : base(name, canFly: true, populationNumber, lifespan, continents: new string[] { "Africa" })
+            : base(name, canFly: true, populationNumber, lifespan, continents: new Continent[] { Continent.Africa })
         {
         }
     }
