@@ -11,9 +11,7 @@
 
         public void Print(string data)
         {
-            File.WriteAllText(_path, data);
-
-            Console.WriteLine($"Data has been successfully written into {_path}");
+            File.AppendAllText(_path, data + "\n");
         }
     }
 }

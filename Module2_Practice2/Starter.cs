@@ -18,6 +18,17 @@
 
             PrintUserFindChoice(safariPark);
 
+            if (AskIfNeedToPrintToFile())
+            {
+                string path = AskFilePath();
+                safariPark.Printer = new FilePrinter(path);
+
+                safariPark.PrintAnimals();
+                Console.WriteLine($"\tData has been successfully written into {path}");
+
+                safariPark.Printer = new ConsolePrinter(); // set default printer
+            }
+
             // написать комментарии
             // проверить все файлы проекта
 
@@ -27,6 +38,7 @@
             safariPark.PrintLastAnimal();*/
         }
 
+        // Create more animals for safari park
         private static Animal[] CreateMoreAnimals()
         {
             var snake = new Snake(name: "Common European Viper", populationNumber: 23, lifespan: 10, isPoisonous: true, continents: new Continent[] { Continent.Europe });
@@ -94,6 +106,43 @@
                 }
 
                 break;
+            }
+        }
+
+        // Ask user if it is needed to print animals to a file
+        private static bool AskIfNeedToPrintToFile()
+        {
+            while (true)
+            {
+                Console.Write("\n\nDo you want to print all animals to file? (y/n): ");
+                string? answer = Console.ReadLine();
+
+                switch (answer)
+                {
+                    case "y":
+                        return true;
+                    case "n":
+                        return false;
+                    default:
+                        continue;
+                }
+            }
+        }
+
+        // Ask user about filepath to the file to print data into
+        private static string AskFilePath()
+        {
+            while (true)
+            {
+                Console.Write("FilePath: ");
+                string? filePath = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(filePath))
+                {
+                    continue;
+                }
+
+                return filePath;
             }
         }
     }
