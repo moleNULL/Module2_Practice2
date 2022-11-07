@@ -29,8 +29,6 @@
 
                 safariPark.Printer = new ConsolePrinter(); // set default printer
             }
-
-            // написать условие
         }
 
         // Create more animals for safari park
