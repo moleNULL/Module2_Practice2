@@ -17,14 +17,14 @@
 
         protected override string PopulationInfo => $"Population: {PopulationNumber} lions";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, CanRoarInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

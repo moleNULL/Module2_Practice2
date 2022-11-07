@@ -20,14 +20,14 @@
         public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
         protected string CountryInfo => $"Country: {_country}";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, FurColorInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo,  ContinentsInfo, CountryInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

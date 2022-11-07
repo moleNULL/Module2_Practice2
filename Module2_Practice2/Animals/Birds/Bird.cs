@@ -21,14 +21,14 @@
         protected string CanFlyInfo => $"CanFly: {CanFly}";
         protected override string PopulationInfo => $"Population: {PopulationNumber} birds";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, CanFlyInfo, PopulationInfo, LifespanInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

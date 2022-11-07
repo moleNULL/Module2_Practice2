@@ -22,6 +22,6 @@
             }
         }
 
-        public abstract void PrintInfo(IPrinter printer);
+        public abstract string GetDescription();
     }
 }

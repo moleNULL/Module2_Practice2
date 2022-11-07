@@ -21,14 +21,14 @@
         protected string HasFurInfo => $"HasFur: {HasFur}";
         protected override string PopulationInfo => $"Population: {PopulationNumber} mammals";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, HasFurInfo, PopulationInfo, LifespanInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

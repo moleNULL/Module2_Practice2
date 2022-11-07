@@ -37,7 +37,8 @@
             // 'j' is needed not to apply Array.Resize() to cut off null elements
             for (int i = 0; i < count; i++)
             {
-                longLivers[i].PrintInfo(safariPark.Printer);
+                string data = $"{i + 1}. {longLivers[i].GetDescription()}";
+                safariPark.Printer.Print(data);
             }
         }
 
@@ -77,7 +78,8 @@
             // 'count' is needed not to apply Array.Resize() to cut off null elements
             for (int i = 0; i < count; i++)
             {
-                smallPops[i].PrintInfo(safariPark.Printer);
+                string data = $"{i + 1}. {smallPops[i].GetDescription()}";
+                safariPark.Printer.Print(data);
             }
         }
 
@@ -133,7 +135,8 @@
             // 'count' is needed not to apply Array.Resize() to cut off null elements
             for (int i = 0; i < count; i++)
             {
-                animals[i].PrintInfo(safariPark.Printer);
+                string data = $"{i + 1}. {animals[i].GetDescription()}";
+                safariPark.Printer.Print(data);
             }
         }
     }

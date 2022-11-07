@@ -21,14 +21,14 @@
         public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
         protected string PlumageInfo => $"Plumage: male - {_plumageMale}, female - {_plumageFemale}";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, PlumageInfo, CanFlyInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

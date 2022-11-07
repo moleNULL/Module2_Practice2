@@ -15,14 +15,14 @@
         public string ConservationStatusInfo => $"ConservationStatus: {ConservationStatus}";
         public string AnimalOrderInfo => $"AnimalOrder: {AnimalOrder}";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, IsPoisonousInfo, CanSwimInfo, PopulationInfo, LifespanInfo, AnimalOrderInfo, ConservationStatusInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

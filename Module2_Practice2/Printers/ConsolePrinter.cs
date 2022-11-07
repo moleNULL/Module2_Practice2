@@ -4,7 +4,7 @@
     {
         public void Print(string data)
         {
-            Console.WriteLine(data + '\n');
+            Console.WriteLine($"{data}\n");
         }
     }
 }

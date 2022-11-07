@@ -11,14 +11,14 @@
 
         protected string FurColorInfo => $"FurColor: {_furColor}";
 
-        public override void PrintInfo(IPrinter printer)
+        public override string GetDescription()
         {
             string separtor = " | ";
             var infoStrings = new string[] { NameInfo, FurColorInfo, PopulationInfo, LifespanInfo, ContinentsInfo };
 
             string info = string.Join(separtor, infoStrings);
 
-            printer.Print(info);
+            return info;
         }
     }
 }

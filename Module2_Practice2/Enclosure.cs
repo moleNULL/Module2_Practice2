@@ -11,6 +11,7 @@ namespace Module2_Practice2
     {
         public Enclosure()
         {
+            // a plug cuz outdated settings.ruleset cannot create Animal[]? object
             Animals = new Animal[0];
         }
 
@@ -18,9 +19,12 @@ namespace Module2_Practice2
 
         public void PrintAnimals(IPrinter printer)
         {
+            int i = 1;
+
             foreach (var animal in Animals)
             {
-                animal.PrintInfo(printer);
+                string data = $"{i++}. {animal.GetDescription()}";
+                printer.Print(data);
             }
         }
 
@@ -33,7 +37,8 @@ namespace Module2_Practice2
                 return;
             }
 
-            Animals[0].PrintInfo(printer);
+            string data = $"1. {Animals[0].GetDescription()}";
+            printer.Print(data);
         }
 
         public void PrintLastAnimal(IPrinter printer)
@@ -45,7 +50,8 @@ namespace Module2_Practice2
                 return;
             }
 
-            Animals[^1].PrintInfo(printer);
+            string data = $"{Animals.Length}. {Animals[^1].GetDescription()}";
+            printer.Print(data);
         }
     }
 }
