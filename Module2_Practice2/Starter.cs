@@ -16,7 +16,6 @@
 
             PrintUserFindChoice(safariPark);
 
-            // fix lessPopulous
             // пронумеровать элементы при выводе
             // сделать возможность добавления += Animal[]
             // написать комментарии

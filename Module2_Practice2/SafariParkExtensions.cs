@@ -65,13 +65,14 @@
 
             foreach (var animal in safariPark.Animals)
             {
-                if (animal.Lifespan == minPopulated)
+                if (animal.PopulationNumber == minPopulated)
                 {
                     smallPops[count++] = animal;
                 }
             }
 
-            Console.WriteLine($"\n\t\t\tAnimals that live the longest life [{count}]:");
+            Console.WriteLine($"\n\t\t\tAnimals that have the lowest population " +
+                $"in the safari park [{count}]:");
 
             // 'count' is needed not to apply Array.Resize() to cut off null elements
             for (int i = 0; i < count; i++)
