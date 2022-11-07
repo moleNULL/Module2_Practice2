@@ -9,6 +9,8 @@
             SafariPark safariPark = new SafariPark();
             safariPark.PopulateByDefault();
             safariPark.Printer = new ConsolePrinter(); // Output to Console for SafariPark class
+            safariPark.AddAnimals(CreateMoreAnimals());
+
             safariPark.PrintAnimals();
 
             SortByUserChoice(safariPark);
@@ -16,18 +18,21 @@
 
             PrintUserFindChoice(safariPark);
 
-            // сделать возможность добавления += Animal[]
             // написать комментарии
             // проверить все файлы проекта
 
-            /*var snake = new Snake(name: "Common European Viper", populationNumber: 23, lifespan: 10, isPoisonous: true, continents: new string[] { "Europe" });
-            var bird = new Bird(name: "American Flamingo", canFly: true, populationNumber: 16, lifespan: 49, continents: new string[] { "South America" });
-
-            safariPark.Animals = new Animal[] { snake, bird };
-
+            /*
             // safariPark.Printer = new FilePrinter("animals.txt");
             safariPark.PrintFirstAnimal();
             safariPark.PrintLastAnimal();*/
+        }
+
+        private static Animal[] CreateMoreAnimals()
+        {
+            var snake = new Snake(name: "Common European Viper", populationNumber: 23, lifespan: 10, isPoisonous: true, continents: new Continent[] { Continent.Europe });
+            var bird = new Bird(name: "American Flamingo", canFly: true, populationNumber: 16, lifespan: 49, continents: new Continent[] { Continent.SouthAmerica });
+
+            return new Animal[] { snake, bird };
         }
 
         // Ask user how to sort animals in the enclosure of the safari park

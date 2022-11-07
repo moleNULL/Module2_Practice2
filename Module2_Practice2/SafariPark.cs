@@ -66,6 +66,11 @@ namespace Module2_Practice2
             _enclosure.Animals = animals;
         }
 
+        public void AddAnimals(Animal[] newAnimals)
+        {
+            _enclosure.Animals = AnimalResizer.AddAnimals(_enclosure.Animals, newAnimals);
+        }
+
         // Create initial animals
         public void PopulateByDefault()
         {
