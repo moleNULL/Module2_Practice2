@@ -1,5 +1,6 @@
 ﻿namespace Module2_Practice2.Sorters
 {
+    // sort animals by their lifespan
     public class LifespanSorter : ISort
     {
         public void Sort(ref Animal[] animals)

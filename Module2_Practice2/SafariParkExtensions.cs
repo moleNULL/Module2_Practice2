@@ -2,6 +2,7 @@
 {
     public static class SafariParkExtensions
     {
+        // print for userChoice #1
         public static void PrintMaxLifespanAnimals(this SafariPark safariPark)
         {
             if (safariPark.Animals.Length == 0)
@@ -42,6 +43,7 @@
             }
         }
 
+        // print for userChoice #2
         public static void PrintLessPopulousAnimals(this SafariPark safariPark)
         {
             if (safariPark.Animals.Length == 0)
@@ -83,7 +85,7 @@
             }
         }
 
-        // method combines printing animals FROM Africa and NOT FROM Africa
+        // method combines printing animals FROM Africa and NOT FROM Africa (userChoice #3, #4)
         public static void PrintAnimalsFromContinent(this SafariPark safariPark, bool fromAfrica)
         {
             if (safariPark.Animals.Length == 0)

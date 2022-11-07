@@ -1,6 +1,7 @@
 ﻿namespace Module2_Practice2.Animals
 {
-    // a contract to force finial classes to implement additional information
+    // a contract to force final classes to implement
+    // additional information about a particular animal
     public interface IAnimalExtendedInfo
     {
         ConservationStatus ConservationStatus { get; init; }

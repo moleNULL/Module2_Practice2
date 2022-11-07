@@ -3,6 +3,7 @@
     // class that provide logic to Add/Remove animals
     public class AnimalResizer
     {
+        // add new animals to already existed ones
         public static Animal[] AddAnimals(Animal[] oldAnimals, Animal[] newAnimals)
         {
             int oldAnimLength = oldAnimals.Length;

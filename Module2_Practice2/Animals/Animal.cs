@@ -22,6 +22,8 @@
             }
         }
 
+        // Get information about an animal to print it later
+        // on different Printers (IPrinter)
         public abstract string GetDescription();
     }
 }

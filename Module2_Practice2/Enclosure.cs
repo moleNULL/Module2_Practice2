@@ -17,6 +17,7 @@ namespace Module2_Practice2
 
         public Animal[] Animals { get; set; }
 
+        // print all animals to IPrinter
         public void PrintAnimals(IPrinter printer)
         {
             int i = 1;
@@ -26,32 +27,6 @@ namespace Module2_Practice2
                 string data = $"{i++}. {animal.GetDescription()}";
                 printer.Print(data);
             }
-        }
-
-        public void PrintFirstAnimal(IPrinter printer)
-        {
-            if (Animals.Length == 0)
-            {
-                Console.WriteLine("There are no animals to print");
-
-                return;
-            }
-
-            string data = $"1. {Animals[0].GetDescription()}";
-            printer.Print(data);
-        }
-
-        public void PrintLastAnimal(IPrinter printer)
-        {
-            if (Animals.Length == 0)
-            {
-                Console.WriteLine("There are no animals to print");
-
-                return;
-            }
-
-            string data = $"{Animals.Length}. {Animals[^1].GetDescription()}";
-            printer.Print(data);
         }
     }
 }

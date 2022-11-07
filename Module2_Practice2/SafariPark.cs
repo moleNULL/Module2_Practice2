@@ -34,38 +34,30 @@ namespace Module2_Practice2
             }
         }
 
+        // print all animals to IPrinter
         public void PrintAnimals()
         {
             _enclosure.PrintAnimals(Printer);
         }
 
-        public void PrintFirstAnimal()
-        {
-            _enclosure.PrintFirstAnimal(Printer);
-        }
-
-        public void PrintLastAnimal()
-        {
-            _enclosure.PrintLastAnimal(Printer);
-        }
-
         public void SortByLifespan()
         {
-            Animal[] animals = _enclosure.Animals;
+            Animal[] animals = Animals;
 
             new LifespanSorter().Sort(ref animals);
 
-            _enclosure.Animals = animals; // Property cannot be passed as a ref parameter
+            Animals = animals; // Property cannot be passed as a ref parameter
         }
 
         public void SortByPopulationNumber()
         {
-            Animal[] animals = _enclosure.Animals;
+            Animal[] animals = Animals;
             new PopulationSorter().Sort(ref animals);
 
-            _enclosure.Animals = animals;
+            Animals = animals;
         }
 
+        // Add new animals to already existed ones
         public void AddAnimals(Animal[] newAnimals)
         {
             _enclosure.Animals = AnimalResizer.AddAnimals(_enclosure.Animals, newAnimals);

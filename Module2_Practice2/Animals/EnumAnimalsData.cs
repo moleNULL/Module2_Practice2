@@ -1,5 +1,6 @@
 ﻿namespace Module2_Practice2.Animals
 {
+    // List of all enums related to animals
     public enum ConservationStatus
     {
         CriticallyEndangered,
