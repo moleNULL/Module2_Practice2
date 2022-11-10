@@ -16,13 +16,21 @@
 
             Animal[] temp = new Animal[animals.Length];
 
+            // prevents duplicating the same Animal N-times by checking if it was already assigned
+            Animal? animalDuplicate = null;
+
             for (int i = 0; i < lifespans.Length; i++)
             {
                 foreach (var animal in animals)
                 {
                     if (lifespans[i] == animal.Lifespan)
                     {
-                        temp[i] = animal;
+                        if (animalDuplicate != animal)
+                        {
+                            temp[i] = animal;
+                            animalDuplicate = animal;
+                            break;
+                        }
                     }
                 }
             }
